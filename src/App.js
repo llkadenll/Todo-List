@@ -1,12 +1,23 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import ToDoList from "./components/ToDoList"
 import {v4 as uuidv4} from "uuid"
 // import NewTask from "./components/NewTask"
+
+const LOCAL_STORAGE_KEY = "todoApp.todos"
 
 export default function App() {
 
   const [taskList, setTaskList] = useState([])
   const [task, setTask] = useState("")
+
+  useEffect(() => {
+    const storedTasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    if (storedTasks) setTaskList(storedTasks)
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(taskList))
+  }, [taskList])
 
   function handleChange(event) {
     const fieldValue = event.target.value
