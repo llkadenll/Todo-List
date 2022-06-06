@@ -36,24 +36,34 @@ export default function App() {
   }
 
   return (
-    <>
-      <ToDoList taskList={taskList} toggleCompleted={toggleCompleted} />
-      {/* <NewTask handleChange={handleChange} handleAddTask={handleAddTask} /> */}
-      <form onSubmit={handleAddTask}>
-        <input
-          type="text"
-          placeholder="Task name"
-          value={task}
-          onKeyPress={event => {
-            if (event.key === 'Enter') {
-              handleAddTask()
-            }
-          }}
-          onChange={handleChange}
-        />
-        <button>Add</button>
-      </form>
-      <button onClick={handleClearTasks}>Clear completed tasks</button>
-    </>
+    <div className="app">
+      <div className="app-title">TO DO LIST</div>
+      <div>
+        <ToDoList taskList={taskList} toggleCompleted={toggleCompleted} />
+        {/* <NewTask handleChange={handleChange} handleAddTask={handleAddTask} /> */}
+        <div className="bottom-section">
+          <div className="bottom-ui">
+            <div className="form-ui">
+              <form onSubmit={handleAddTask}>
+                <input
+                  className="add-task"
+                  type="text"
+                  placeholder="Task name"
+                  value={task}
+                  onKeyPress={event => {
+                    if (event.key === 'Enter') {
+                      handleAddTask()
+                    }
+                  }}
+                  onChange={handleChange}
+                />
+                <button className="add-button">Add</button>
+              </form>
+            </div>
+            <button className="clear-button" onClick={handleClearTasks}>Clear completed tasks</button>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }

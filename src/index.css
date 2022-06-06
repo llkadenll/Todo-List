@@ -1,13 +1,107 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Handlee', cursive;
+
+  background-image: url(images/background-img.jpg);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  background-color: #eeeeee;
+  width: 500px;
+  min-height: 660px;
+  padding: 40px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.app-title {
+  background-color: inherit;
+  border: 3px solid #333333;
+  border-radius: 3px;
+  position: relative;
+  top: -65px;
+  left: 15%;
+  width: 70%;
+  height: 50px;
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-list {
+  margin-bottom: 20px;
+}
+
+.task {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: flex-end;
+}
+
+ input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+} 
+
+.task-name {
+  margin-left: 10px;
+  text-indent: 5px;
+  width: 100%;
+  font-size: larger;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-ui {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.form-ui {
+  display: flex;
+  justify-content: center;
+}
+
+.add-task {
+  width: 226px;
+  padding: 10px;
+}
+
+.add-button {
+  width: 100px;
+  height: 39px;
+  font-weight: bold;
+  color: green;
+  border-color: green;
+  border-radius: 0 3px 3px 0;
+}
+
+.clear-button {
+  height: 39px;
+  font-weight: bold;
+  color: #be2c3b;
+  border-color: #be2c3b;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+.add-task, .add-button, .clear-button {
+  font-family: 'Trebuchet MS', sans-serif;
 }

@@ -4,8 +4,6 @@ import {v4 as uuidv4} from "uuid"
 
 export default function ToDoList(props) {
 
-  console.log(props.taskList)
-
   const tasks = props.taskList.map(task => {
     return (
       <Task key={task.id} task={task} toggleCompleted={props.toggleCompleted} />
